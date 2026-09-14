@@ -84,6 +84,16 @@ The solution uses `RANK()` to handle ties for the second-highest salary and `DIS
 
 **Key concepts:** `RANK()`, `DISTINCT`, window functions, subqueries.
 
+---
+
+### 05 — Spotify: Cumulative Song Plays
+
+**Problem:** Calculate the cumulative number of plays for each user and song up to August 4th, 2022, combining historical streaming data with the current week's activity.
+
+**Analytical reasoning:** The solution aggregates the historical and weekly data to the **user-song grain** before combining them. A `FULL JOIN` is used to preserve users and songs that appear only in the current week's data. `COALESCE` then combines the identifiers and play counts from both sources.
+
+**Key concepts:** CTE, `FULL JOIN`, `COALESCE`, `SUM()`, `GROUP BY`, data grain.
+
 ## Analytical Approach
 
 For each problem, the goal is not only to produce a correct SQL query, but to understand the **analytical logic behind the solution**.
